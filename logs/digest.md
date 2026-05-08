@@ -8,7 +8,7 @@
 - `spam`: 2
 - `urgent_action`: 2
 
-## 🔴 Urgent — Action Required
+## 🔴 Urgent!!!
 
 ### Security alert
 **From:** Google <no-reply@accounts.google.com>
