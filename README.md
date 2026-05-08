@@ -1,14 +1,13 @@
-# 🤖 Hourglass Comms Agent
+# ⏳ Hourglass Email Agent
 
-> An autonomous email triage, drafting, and routing agent built for the [Hourglass AI Agent Challenge](https://challenge.thehourglass.ai/).
-
-Built by **Rachel Phung** — Business Analytics student at Deakin University, referred by Finlay Ekins.
+Agent that autonomously reads and triage emails by urgent/newsletter/spam/etc and suggest replies.
+By Rachel Phung :)
 
 ---
 
 ## What It Does
 
-The agent runs autonomously against your Gmail inbox and handles every unread email end-to-end:
+The agent goes through your Gmail inbox and handles unread email end-to-end:
 
 | Step | What happens |
 |------|-------------|
@@ -19,14 +18,6 @@ The agent runs autonomously against your Gmail inbox and handles every unread em
 | **5. Digest** | Writes a Markdown daily digest summarising everything processed, with drafts surfaced for urgent items |
 
 All results are persisted to a local SQLite database so emails are never double-processed.
-
----
-
-## Why This Matters for Hourglass
-
-Hourglass builds AI agents that eliminate admin bottlenecks for businesses. Email is the #1 admin sink — the average knowledge worker spends 2.5 hours/day on it. This agent is exactly the type of autonomous workflow Hourglass deploys for clients: **real automation inside existing tools, not slide decks**.
-
-My NLP background (sentiment analysis pipelines, ML classification) shaped how I approached the triage logic — it's not a simple prompt; it returns structured JSON with confidence scoring and fallback handling, making it production-auditable.
 
 ---
 
@@ -54,7 +45,7 @@ hourglass-agent/
 
 ---
 
-## Triage Categories
+## Categories
 
 | Category | Description | Auto-label |
 |----------|-------------|------------|
@@ -66,9 +57,9 @@ hourglass-agent/
 
 ---
 
-## Quickstart
+## Test my agent! You can either -
 
-### Option A: Demo mode (no Gmail needed, 2 minutes)
+### Demo mode (no Gmail)
 
 ```bash
 git clone <repo-url>
@@ -83,7 +74,7 @@ cp .env.example .env
 python demo.py
 ```
 
-### Option B: Live Gmail mode
+### Live Gmail mode
 
 **Step 1: Set up Google Cloud credentials**
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
@@ -138,16 +129,6 @@ Processing: Your weekly AI newsletter
 Digest written → logs/digest.md
 Done. Processed 5 new emails.
 ```
-
----
-
-## Submission Notes
-
-This agent maps directly to the real-world workflow Hourglass deploys for clients. I built it around their positioning — *working AI systems inside existing tools, not recommendations* — using Gmail because that's where actual client admin time disappears.
-
-The triage logic uses structured JSON output with confidence scoring rather than free-text classification, which makes it auditable and easy to extend (e.g. adding a human-review queue for low-confidence emails). The SQLite persistence layer means it can run as a cron job without re-processing emails, which is how you'd deploy this in a real client environment.
-
-**Referred by Finlay Ekins.**
 
 ---
 
