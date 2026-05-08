@@ -1,7 +1,6 @@
 """
-Hourglass Comms Agent
-Autonomous email triage, drafting, routing and digest — built for the Hourglass AI challenge.
-Author: Rachel Phung
+Email Agent for Hourglass by Rachel
+Flag email as urgent/spam/newsletter etc, and draft replies
 """
 
 import os
